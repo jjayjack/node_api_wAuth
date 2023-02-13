@@ -274,7 +274,7 @@
 			<h1>🌽 Node Farm 🥦</h1>
 
 			<figure class="product">
-				<div class="product__organic {%NOTORGANIC%}">
+				<div class="product__organic {%NOT_ORGANIC%}">
 					<h5>Organic</h5>
 				</div>
 				<a href="#" class="product__back">
@@ -282,51 +282,53 @@
 				</a>
 				<div class="product__hero">
 					<span class="product__emoji product__emoji--1"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--2"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--3"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--4"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--5"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--6"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--7"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--8"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 					<span class="product__emoji product__emoji--9"
-						>{%PRODUCTEMOJI%}</span
+						>{%PRODUCT_EMOJI%}</span
 					>
 				</div>
-				<h2 class="product__name">{%PRODUCTNAME%}</h2>
+				<h2 class="product__name">{%PRODUCT_NAME%}</h2>
 				<div class="product__details">
 					<p>
-						<span class="emoji-left">🌍</span> {%PRODUCTLOCATION%}
+						<span class="emoji-left">🌍</span> {%PRODUCT_LOCATION%}
 					</p>
-					<p><span class="emoji-left">❤️</span> {%PRODUCTVITAMIN%}</p>
 					<p>
-						<span class="emoji-left">📦</span> {%PRODUCTQUANTITY%}
+						<span class="emoji-left">❤️</span> {%PRODUCT_VITAMIN%}
 					</p>
-					<p><span class="emoji-left">🏷</span> {%PRODUCTPRICE%}</p>
+					<p>
+						<span class="emoji-left">📦</span> {%PRODUCT_QUANTITY%}
+					</p>
+					<p><span class="emoji-left">🏷</span> {%PRODUCT_PRICE%}</p>
 				</div>
 
 				<a href="#" class="product__link">
 					<span class="emoji-left">🛒</span>
-					<span>Add to shopping card (6.50€)</span>
+					<span>Add to shopping card ({%PRODUCT_PRICE%})</span>
 				</a>
 
-				<p class="product__description">{%PRODUCTDESCRIPTION%}</p>
+				<p class="product__description">{%PRODUCT_DESCRIPTION%}</p>
 			</figure>
 		</div>
 	</body>
