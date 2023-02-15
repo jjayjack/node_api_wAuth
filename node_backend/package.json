@@ -1,0 +1,19 @@
+{
+  "name": "node_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjayjack/node_api_wAuth.git"
+  },
+  "author": "Jocelyn Jayjack | Jonas Schmedtmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjayjack/node_api_wAuth/issues"
+  },
+  "homepage": "https://github.com/jjayjack/node_api_wAuth#readme"
+}
