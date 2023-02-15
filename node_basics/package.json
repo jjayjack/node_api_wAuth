@@ -17,7 +17,7 @@
 	},
 	"homepage": "https://github.com/jjayjack/node_api_wAuth#readme",
 	"dependencies": {
-		"slugify": "^1.6.5"
+		"slugify": "~1.6.5"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.20"
