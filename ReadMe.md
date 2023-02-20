@@ -35,3 +35,45 @@ Limit Thread Blocking:
 - Be careful with `JSON` in large objects
 
 - Do not use too complex regular expressions (e.g. nested quantifiers )
+
+Observer Pattern:
+
+Event Emitter **-EMITS-EVENTS->** Event Listener **-CALLS->** Attached callback function
+
+## Streams
+
+The What:
+
+Used to process (read & write) data piece by piece (chunks), without completing the whole read or write operation, and therefore without keeping all the data in memory. Streams are instances of the EventEmitter class
+
+The Benefit:
+
+- Perfect for handling large volumes of data, for example videos
+
+- More efficient data processing in terms of memory (no need to keep all data in memory) and time (we do not have to wait until all the data is available)
+
+The How:
+
+1. Readable Streams:
+
+   Streams from which we can read (consume) data
+
+   Example: `http` requests || `fs` read streams
+
+   Important Events: `data` || `end`
+
+   Important Functions: `pipe()` || `read()`
+
+2. Writable Streams
+
+   Streams to which we can write data
+
+   Example: `http` responses || `fs` write streams
+
+   Important Events: `drain` || `finish`
+
+   Important Functions: `write()` || `end()`
+
+3. Duplex Streams
+
+4. Transform Streams
