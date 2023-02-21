@@ -11,7 +11,9 @@ server.on('request', (req, res) => {
     res.end(data);
   });
   */
+
   // Solution 2: streams: create a readable stream
+  /*
   const readable = fs.createReadStream('test-file.txt');
   readable.on('data', (chunk) => {
     res.write(chunk);
@@ -25,6 +27,11 @@ server.on('request', (req, res) => {
     res.statusCode = 500;
     res.end('File not found');
   });
+  */
+
+  //Solution 3: Using pipe operator on readable (source) stream == readableSource.pipe(writeableDestination)
+  const readable = fs.createReadStream('test-file.txt');
+  readable.pipe(res);
 });
 
 server.listen(8000, '127.0.0.1', () => {
