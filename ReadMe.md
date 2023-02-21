@@ -76,4 +76,12 @@ The How:
 
 3. Duplex Streams
 
+   Streams that are both readable and writable
+
+   Example: net web sockets
+
 4. Transform Streams
+
+   Streams that transform data as it is written or read
+
+   Example: `zlib` Gzip creation
