@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
+// Middleware
+app.use(express.json());
 
 /*
 app.get('/', (req, res) => {
@@ -23,6 +25,11 @@ app.get('/api/v1/tours', (req, res) => {
       tours,
     },
   });
+});
+
+app.post('/api/v1/tours', (req, res) => {
+  console.log(req.body);
+  res.send('Done!');
 });
 
 const port = 3000;
