@@ -36,6 +36,19 @@ const getDogPic = async () => {
   }
   return '2: Ready!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';
 };
+
+(async () => {
+  try {
+    console.log('1: Will get dog pics');
+    const x = await getDogPic();
+    console.log(x);
+    console.log('3: Done getting dog pics');
+  } catch (err) {
+    console.log('Error AHHHHH');
+  }
+})();
+
+/*
 console.log('1: Will get dog pics');
 getDogPic()
   .then((x) => {
@@ -43,6 +56,7 @@ getDogPic()
     console.log('3: Done getting dog pics');
   })
   .catch((err) => console.log(err, 'AHHHHHH'));
+*/
 
 /*
 // Callback hell --again
