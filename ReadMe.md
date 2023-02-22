@@ -2,17 +2,19 @@
 
 Client - Server Relationship
 
+---
+
 ## Dissecting the Event Loop
 
 Event Loop handles all application code that is inside **callback functions** (non-top level code). Event-driven architecture:
 
-    - Events are emitted
+- Events are emitted
 
-    - Event loops picks emitted event
+- Event loops picks emitted event
 
-    - Callback functions are called once required are available
+- Callback functions are called once required are available
 
-    - Event Loop does _orchestration_
+- Event Loop does _orchestration_
 
 Processing outline - What order the Event Loop handles events
 
@@ -39,6 +41,8 @@ Limit Thread Blocking:
 Observer Pattern:
 
 Event Emitter **-EMITS-EVENTS->** Event Listener **-CALLS->** Attached callback function
+
+---
 
 ## Streams
 
@@ -85,3 +89,29 @@ The How:
    Streams that transform data as it is written or read
 
    Example: `zlib` Gzip creation
+
+---
+
+## REST Architecture & Building an API
+
+**API: Application Programming Interface**
+
+A piece of software that can be used by another piece of software, in order to allow applications to talk to each other.
+
+**REST:**
+
+Principles:
+
+1.  Separate API into logical **resources**
+
+Object or representation of something, which has data associated with it. Any information that can be **named** can be a resource.
+
+2.  Expose structured, **resource-based URLs**
+
+Endpoints should contain **only resources** (nouns), and use **HTTP methods** for actions
+
+3.  Use **HTTP methods** (C: POST; R: GET; U: PUT | PATCH; D: DELETE)
+
+4.  Send data as **JSON** (usually)
+
+5.  Be **stateless**
