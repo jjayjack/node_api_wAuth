@@ -1,5 +1,4 @@
 const express = require('express');
-const fs = require('fs');
 const morgan = require('morgan');
 
 const app = express();
@@ -19,55 +18,15 @@ app.use((req, res, next) => {
   next();
 });
 
-const tours = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`));
 // Tours HTTP methods
 
 //User HTTP methods
-const getAllUsers = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!',
-  });
-};
-
-const createUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!',
-  });
-};
-
-const getUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!',
-  });
-};
-
-const updateUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!',
-  });
-};
-
-const deleteUser = (req, res) => {
-  res.status(500).json({
-    status: 'error',
-    message: 'This route is not yet defined!',
-  });
-};
-
-const userRouter = express.Router();
 
 // Mounting new Router on a Route
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
 //update to Routes using Middleware
-
-userRouter.route('/').get(getAllUsers).post(createUser);
-userRouter.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 // Routes
 /*
