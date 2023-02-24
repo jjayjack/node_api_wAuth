@@ -68,6 +68,25 @@ app.get('/api/v1/tours/:id', getTour);
 //   });
 // });
 
+const createTour = (req, res) => {
+  const newId = tours[tours.legnth - 1].id + 1;
+  const newTour = Object.assign({ id: newId }, req.body);
+
+  tours.push(newTour);
+
+  fs.writeFile(`${__dirname}/dev-data/data/tours-simple.json`, JSON.stringify(tours), (err) => {
+    console.log(err);
+    res.status(201).json({
+      status: 'success',
+      data: {
+        tour: newTour,
+      },
+    });
+  });
+};
+
+app.post('/api/v1/tours', createTour);
+
 app.post('/api/v1/tours', (req, res) => {
   console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;
