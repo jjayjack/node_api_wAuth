@@ -1,6 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
 
+const tourRouter = require('./routes/tourRoutes');
+const userRouter = require('./routes/userRoutes');
+
 const app = express();
 
 // Middleware
@@ -18,26 +21,9 @@ app.use((req, res, next) => {
   next();
 });
 
-// Tours HTTP methods
-
-//User HTTP methods
-
 // Mounting new Router on a Route
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
-
-//update to Routes using Middleware
-
-// Routes
-/*
-app.route('/api/v1/tours').get(getAllTours).post(createTour);
-
-app.route('/api/v1/tours/:id').get(getTour).patch(updateTour).delete(deleteTour);
-
-app.route('/api/v1/users').get(getAllUsers).post(createUser);
-
-app.route('/api/v1/users/:id').get(getUser).patch(updateUser).delete(deleteUser);
-*/
 
 // Start Server
 const port = 3000;
