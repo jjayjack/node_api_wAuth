@@ -120,25 +120,40 @@ const updateTour = (req, res) => {
 
 app.patch('/api/v1/tours/:id', updateTour);
 
-app.patch('/api/v1/tours/:id', (req, res) => {
-  if (req.params.id * 1 > tours.length) {
+// app.patch('/api/v1/tours/:id', (req, res) => {
+//   if (req.params.id * 1 > tours.length) {
+//     return res.status(404).json({
+//       status: 'fail',
+//       message: 'Invalid ID',
+//     });
+//   }
+
+//   res.status(200).json({
+//     status: 'success',
+//     data: { tour: '<Updated tour here..>' },
+//   });
+// });
+
+const deleteTour = (req, res) => {
+  if (!req.params.id) {
     return res.status(404).json({
       status: 'fail',
-      message: 'Invalid ID',
+      messsage: 'Invalid',
     });
   }
-
-  res.status(200).json({
+  res.status(204).json({
     status: 'success',
-    data: { tour: '<Updated tour here..>' },
+    data: null,
   });
-});
+};
+
+app.delete('/api/v1/tours/:id', deleteTour);
 
 app.delete('/api/v1/tours/:id', (req, res) => {
   if (!req.params.id) {
     return res.status(404).json({
       status: 'fail',
-      message: 'Involid',
+      message: 'Invalid',
     });
   }
 
