@@ -16,7 +16,6 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  console.log('made it!');
   req.requestTime = new Date().toISOString();
   next();
 });
