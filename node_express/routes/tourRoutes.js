@@ -2,6 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
+const tours = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`));
+
 const getAllTours = (req, res) => {
   console.log(req.requestTime);
   res.status(200).json({
