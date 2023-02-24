@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 const tours = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`));
-// Route Handlers
+// Tours HTTP methods
 const getAllTours = (req, res) => {
   console.log(req.requestTime);
   res.status(200).json({
@@ -33,7 +33,6 @@ const getAllTours = (req, res) => {
   });
 };
 
-//Tour HTTP methods
 const getTour = (req, res) => {
   const id = req.params.id * 1;
 
@@ -126,7 +125,22 @@ const deleteUser = (req, res) => {
   });
 };
 
+const tourRouter = express.Router();
+const userRouter = express.Router();
+
+// Mounting new Router on a Route
+app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/users', userRouter);
+
+//update to Routes using Middleware
+tourRouter.route('/').get(getAllTours).post(createTour);
+tourRouter.route('/:id').get(getTour).patch(updateTour).delete(deleteTour);
+
+userRouter.route('/').get(getAllUsers).post(createUser);
+userRouter.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
+
 // Routes
+/*
 app.route('/api/v1/tours').get(getAllTours).post(createTour);
 
 app.route('/api/v1/tours/:id').get(getTour).patch(updateTour).delete(deleteTour);
@@ -134,6 +148,7 @@ app.route('/api/v1/tours/:id').get(getTour).patch(updateTour).delete(deleteTour)
 app.route('/api/v1/users').get(getAllUsers).post(createUser);
 
 app.route('/api/v1/users/:id').get(getUser).patch(updateUser).delete(deleteUser);
+*/
 
 // Start Server
 const port = 3000;
