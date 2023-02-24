@@ -149,19 +149,19 @@ const deleteTour = (req, res) => {
 
 app.delete('/api/v1/tours/:id', deleteTour);
 
-app.delete('/api/v1/tours/:id', (req, res) => {
-  if (!req.params.id) {
-    return res.status(404).json({
-      status: 'fail',
-      message: 'Invalid',
-    });
-  }
+// app.delete('/api/v1/tours/:id', (req, res) => {
+//   if (!req.params.id) {
+//     return res.status(404).json({
+//       status: 'fail',
+//       message: 'Invalid',
+//     });
+//   }
 
-  res.status(204).json({
-    status: 'success',
-    data: null,
-  });
-});
+//   res.status(204).json({
+//     status: 'success',
+//     data: null,
+//   });
+// });
 
 const port = 3000;
 app.listen(port, () => {
